@@ -1,0 +1,7 @@
+Debug/
+bin/
+Documentation/
+*.launch
+.settings/
+.mxproject
+*.zip
