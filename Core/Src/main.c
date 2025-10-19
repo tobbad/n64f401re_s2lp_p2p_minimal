@@ -227,13 +227,13 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, radio_cs_Pin|radio_sdn_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, pa_sel_Pin|radio_cs_Pin|radio_sdn_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(radio_led_GPIO_Port, radio_led_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(eeprom_cs_GPIO_Port, eeprom_cs_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(eeprom_cs_GPIO_Port, eeprom_cs_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : radio_int_Pin */
   GPIO_InitStruct.Pin = radio_int_Pin;
@@ -241,25 +241,25 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(radio_int_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : radio_cs_Pin radio_sdn_Pin */
-  GPIO_InitStruct.Pin = radio_cs_Pin|radio_sdn_Pin;
+  /*Configure GPIO pins : pa_sel_Pin radio_cs_Pin radio_sdn_Pin */
+  GPIO_InitStruct.Pin = pa_sel_Pin|radio_cs_Pin|radio_sdn_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : radio_led_Pin */
   GPIO_InitStruct.Pin = radio_led_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(radio_led_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : eeprom_cs_Pin */
   GPIO_InitStruct.Pin = eeprom_cs_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(eeprom_cs_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
