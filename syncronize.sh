@@ -9,11 +9,11 @@ FILES_TO_COPY=(
     "Core/Inc/radio.h"
     "Core/Src/persistence.c"
     "Core/Inc/persistence.h"
+    "X-CUBE-SUBG2/App/app_x-cube-subg2.h"
+    "X-CUBE-SUBG2/App/app_x-cube-subg2.c"
+    "X-CUBE-SUBG2/Target/s2lp_management.c"
+    "X-CUBE-SUBG2/App/p2p_demo_settings.h"
 )
-#    "X-CUBE-SUBG2/App/p2p_demo_settings.h" different frequencies/bus
-#    "X-CUBE-SUBG2/App/app_x-cube-subg2.h"
-#    "X-CUBE-SUBG2/App/app_x-cube-subg2.c"
-#    "X-CUBE-SUBG2/Target/s2lp_management.c"
 #    "Drivers/BSP/S2868A2/s2868a2.c"
 #    "Drivers/BSP/S2868A2/s2868a2.h"
 #    "Drivers/BSP/Components/S2LP/s2lp.c"
@@ -21,7 +21,8 @@ FILES_TO_COPY=(
 #    "Drivers/BSP/Components/S2LP/S2LP_CORE_SPI.h"
 
 # --- Funktion zum Kopieren der Dateien ---
-copy_files() {
+
+copy_files () {
     local src="$1"
     local dst="$2"
     shift 2

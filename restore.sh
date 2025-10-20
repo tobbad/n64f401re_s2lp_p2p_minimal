@@ -1,4 +1,4 @@
-#bin/bash
+#!/usr/bin/bash
 git restore X-CUBE-SUBG2/App/app_x-cube-subg2.h
 git restore X-CUBE-SUBG2/App/app_x-cube-subg2.c
 git restore X-CUBE-SUBG2/Target/s2868a2_conf.h
