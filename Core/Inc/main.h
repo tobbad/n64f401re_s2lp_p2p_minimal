@@ -59,8 +59,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BSP_BUTTON_EXTI_IRQn EXTI15_10_IRQn
 #define radio_int_Pin GPIO_PIN_0
 #define radio_int_GPIO_Port GPIOC
+#define radio_int_EXTI_IRQn EXTI0_IRQn
 #define radio_cs_Pin GPIO_PIN_1
 #define radio_cs_GPIO_Port GPIOA
 #define USART_TX_Pin GPIO_PIN_2
